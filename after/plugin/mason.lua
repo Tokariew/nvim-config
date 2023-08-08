@@ -47,17 +47,11 @@ end
 --  Add any additional override configuration in the following tables. They will be passed to
 --  the `settings` field of the server config. You must look up that documentation yourself.
 local servers = {
-  -- clangd = {},
-  -- gopls = {},
-  -- pyright = {},
-  -- rust_analyzer = {},
-  -- tsserver = {},
-
   lua_ls = {
     Lua = {
       workspace = { checkThirdParty = false },
       telemetry = { enable = false },
-    },
+    }
   },
   pylsp = {
     pylsp = {
@@ -73,7 +67,20 @@ local servers = {
         }
       }
     }
-
+  },
+  texlab = {
+    texlab = {
+      build = {
+        executuable = 'latexmk',
+        args = { "-pdflua", "-interaction=nonstopmode", "-synctex=1", "%f" },
+        onSave = false,
+        forwardSearchAfter = false,
+      },
+      forwardSearch = {
+        executable = "zathura",
+        args = { "--synctex-forward", "%l:1:%f", "%p" }
+      }
+    }
   }
 }
 
