@@ -36,5 +36,3 @@ autocmd({ 'InsertLeave', 'TextChanged', 'FocusLost' }, {
     pattern = "*",
     command = "silent! write",
 })
-
-

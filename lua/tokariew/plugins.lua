@@ -12,27 +12,29 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  "lukas-reineke/indent-blankline.nvim",
   "UtkarshVerma/molokai.nvim",
-  "navarasu/onedark.nvim",
   "brenoprata10/nvim-highlight-colors",
+  "lukas-reineke/indent-blankline.nvim",
+  "navarasu/onedark.nvim",
   "tpope/vim-sleuth",
+  'L3MON4D3/cmp_luasnip',
+  'dhruvasagar/vim-table-mode',
+  'folke/trouble.nvim',
+  'hrsh7th/cmp-buffer',
+  'hrsh7th/cmp-nvim-lsp',
+  'hrsh7th/cmp-nvim-lua',
+  'hrsh7th/cmp-path',
+  'hrsh7th/nvim-cmp',
+  'jiaoshijie/undotree',
+  'lewis6991/gitsigns.nvim',
+  'nvim-telescope/telescope-symbols.nvim',
+  'nvim-treesitter/playground',
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
-  'hrsh7th/cmp-nvim-lsp',
-  'hrsh7th/nvim-cmp',
-  'hrsh7th/cmp-buffer',
-  'hrsh7th/cmp-path',
-  'saadparwaiz1/cmp_luasnip',
-  'hrsh7th/cmp-nvim-lua',
-  'L3MON4D3/LuaSnip',
-  'rafamadriz/friendly-snippets',
-  'jiaoshijie/undotree',
-  'folke/trouble.nvim',
+  'tpope/vim-surround',
   'vimwiki/vimwiki',
-  'lewis6991/gitsigns.nvim',
-
-  { 'folke/which-key.nvim',          opts = {} },
+  { 'L3MON4D3/LuaSnip',     dependencies = { "rafamadriz/friendly-snippets", "benfowler/telescope-luasnip.nvim" } },
+  { 'folke/which-key.nvim', opts = {} },
   {
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
@@ -78,20 +80,6 @@ require("lazy").setup({
 
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.o.completeopt = 'menuone,noselect'
-
-vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = '[?] Find recently opened files' })
-vim.keymap.set('n', '<leader><space>', require('telescope.builtin').buffers, { desc = '[ ] Find existing buffers' })
-vim.keymap.set('n', '<leader>/', function()
-  require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-    previewer = false,
-  })
-end, { desc = '[/] Fuzzily search in current buffer' })
-
-vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
-vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
-vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = '[S]earch current [W]ord' })
-vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
-vim.keymap.set('n', '<leader>sd', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic message" })

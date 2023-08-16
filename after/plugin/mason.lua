@@ -51,7 +51,7 @@ local servers = {
     Lua = {
       workspace = { checkThirdParty = false },
       telemetry = { enable = false },
-    }
+    },
   },
   pylsp = {
     pylsp = {
@@ -71,10 +71,13 @@ local servers = {
   texlab = {
     texlab = {
       build = {
-        executuable = 'latexmk',
+        executable = 'latexmk',
         args = { "-pdflua", "-interaction=nonstopmode", "-synctex=1", "%f" },
         onSave = false,
         forwardSearchAfter = false,
+      },
+      latexindent = {
+        modifyLinebreaks = true,
       },
       forwardSearch = {
         executable = "zathura",

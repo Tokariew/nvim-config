@@ -24,12 +24,14 @@ require('lualine').setup {
   sections = {
     lualine_a = { 'mode' },
     lualine_b = { 'branch', 'diff', 'diagnostics' },
-    lualine_c = { { 'filename', symbols = {
-      modified = '[+]',
-      readonly = '',
-      unnamed = '[No name]',
-      newfile = '',
-    },
+    lualine_c = { {
+      'filename',
+      symbols = {
+        modified = '[+]',
+        readonly = '',
+        unnamed = '[No name]',
+        newfile = '',
+      },
     },
     },
     lualine_x = { 'encoding', 'fileformat', 'filetype' },
