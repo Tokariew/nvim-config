@@ -33,6 +33,14 @@ require("lazy").setup({
   'tpope/vim-rhubarb',
   'tpope/vim-surround',
   'vimwiki/vimwiki',
+  {
+    'f3fora/nvim-texlabconfig',
+    config = function()
+      require('texlabconfig').setup(config)
+    end,
+    ft = { 'tex', 'bib' }, -- Lazy-load on filetype
+    build = 'go build'
+  },
   { 'L3MON4D3/LuaSnip',     dependencies = { "rafamadriz/friendly-snippets", "benfowler/telescope-luasnip.nvim" } },
   { 'folke/which-key.nvim', opts = {} },
   {
