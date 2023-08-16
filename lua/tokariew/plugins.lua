@@ -24,6 +24,7 @@ require("lazy").setup({
   'hrsh7th/cmp-nvim-lsp',
   'hrsh7th/cmp-nvim-lua',
   'hrsh7th/cmp-path',
+  'hrsh7th/cmp-cmdline',
   'hrsh7th/nvim-cmp',
   'jiaoshijie/undotree',
   'lewis6991/gitsigns.nvim',
@@ -36,7 +37,7 @@ require("lazy").setup({
   {
     'f3fora/nvim-texlabconfig',
     config = function()
-      require('texlabconfig').setup(config)
+      require('texlabconfig').setup()
     end,
     ft = { 'tex', 'bib' }, -- Lazy-load on filetype
     build = 'go build'

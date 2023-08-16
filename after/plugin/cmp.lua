@@ -41,6 +41,26 @@ cmp.setup {
     { name = 'luasnip' },
     { name = 'nvim_lsp' },
     { name = 'path' },
-    { name = 'buffer' }
+    { name = 'buffer' },
+    { name = 'cmdline' },
   },
+  cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = cmp.config.sources({
+      { name = 'path' }
+    }, {
+      {
+        name = 'cmdline',
+        option = {
+          ignore_cmds = { 'Man', '!' }
+        }
+      }
+    })
+  }),
+  cmp.setup.cmdline({ '/', '?' }, {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+      { name = 'buffer' }
+    }
+  })
 }
