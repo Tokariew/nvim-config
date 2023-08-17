@@ -5,7 +5,7 @@ end
 require('lualine').setup {
   options = {
     icons_enabled = true,
-    theme = 'auto',
+    theme = 'onedark',
     component_separators = { left = '', right = '' },
     section_separators = { left = '', right = '' },
     disabled_filetypes = {
@@ -48,6 +48,26 @@ require('lualine').setup {
   },
   winbar = {
     lualine_a = { { 'buffers', mode = 2 } },
+    lualine_y = { {
+      require("noice").api.status.message.get_hl,
+      cond = require("noice").api.status.message.has,
+    },
+      {
+        require("noice").api.status.command.get,
+        cond = require("noice").api.status.command.has,
+        color = { fg = "#ff9e64" },
+      },
+      {
+        require("noice").api.status.mode.get,
+        cond = require("noice").api.status.mode.has,
+        color = { fg = "#ff9e64" },
+      },
+      {
+        require("noice").api.status.search.get,
+        cond = require("noice").api.status.search.has,
+        color = { fg = "#ff9e64" },
+      }, },
+
   },
   inactive_winbar = {},
   extensions = {}

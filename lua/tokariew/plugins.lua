@@ -12,7 +12,6 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  "UtkarshVerma/molokai.nvim",
   "brenoprata10/nvim-highlight-colors",
   "lukas-reineke/indent-blankline.nvim",
   "navarasu/onedark.nvim",
@@ -21,10 +20,10 @@ require("lazy").setup({
   'dhruvasagar/vim-table-mode',
   'folke/trouble.nvim',
   'hrsh7th/cmp-buffer',
+  'hrsh7th/cmp-cmdline',
   'hrsh7th/cmp-nvim-lsp',
   'hrsh7th/cmp-nvim-lua',
   'hrsh7th/cmp-path',
-  'hrsh7th/cmp-cmdline',
   'hrsh7th/nvim-cmp',
   'jiaoshijie/undotree',
   'lewis6991/gitsigns.nvim',
@@ -42,26 +41,24 @@ require("lazy").setup({
     ft = { 'tex', 'bib' }, -- Lazy-load on filetype
     build = 'go build'
   },
-  { 'L3MON4D3/LuaSnip',     dependencies = { "rafamadriz/friendly-snippets", "benfowler/telescope-luasnip.nvim" } },
+  {
+    'L3MON4D3/LuaSnip',
+    dependencies = {
+      "rafamadriz/friendly-snippets",
+      "benfowler/telescope-luasnip.nvim",
+    },
+  },
   { 'folke/which-key.nvim', opts = {} },
   {
-    -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
     dependencies = {
-      -- Automatically install LSPs to stdpath for neovim
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
-
-      -- Useful status updates for LSP
-      -- NOTE: `opts = {}` is the same as calling `require('fidget').setup({})`
-      { 'j-hui/fidget.nvim', opts = {}, tag = "legacy" },
-
-      -- Additional lua configuration, makes nvim stuff amazing!
+      -- { 'j-hui/fidget.nvim', opts = {}, tag = "legacy" },
       'folke/neodev.nvim',
     },
   },
   {
-    -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
@@ -71,19 +68,30 @@ require("lazy").setup({
     end,
   },
 
-  { 'nvim-telescope/telescope.nvim', version = '*', dependencies = { 'nvim-lua/plenary.nvim' } },
+  {
+    'nvim-telescope/telescope.nvim',
+    version = '*',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+  },
   {
     'nvim-telescope/telescope-fzf-native.nvim',
-    -- NOTE: If you are having trouble with this installation,
-    --       refer to the README for telescope-fzf-native for more instructions.
     build = 'make',
     cond = function()
       return vim.fn.executable 'make' == 1
     end,
   },
   {
-    'nvim-lualine/lualine.nvim', dependencies = { 'kyazdani42/nvim-web-devicons', opt = true },
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'kyazdani42/nvim-web-devicons', opt = true },
   },
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    }
+  }
 })
 
 
