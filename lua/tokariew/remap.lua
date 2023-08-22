@@ -17,9 +17,7 @@ for _, keymap in pairs({
     'zx',
     'zX',
     'zm',
-    'zM',
     'zr',
-    'zR',
 }) do
     vim.api.nvim_set_keymap('n', keymap, keymap .. '<CMD>IndentBlanklineRefresh<CR>', {
         noremap = true,

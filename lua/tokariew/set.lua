@@ -48,5 +48,3 @@ vim.opt.cursorcolumn = true
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
-
-vim.opt.foldmethod = "indent" -- call me evil

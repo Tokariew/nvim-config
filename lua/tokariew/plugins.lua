@@ -21,6 +21,7 @@ require("lazy").setup({
   'folke/trouble.nvim',
   'hrsh7th/cmp-buffer',
   'hrsh7th/cmp-cmdline',
+  'mfussenegger/nvim-lint',
   'hrsh7th/cmp-nvim-lsp',
   'hrsh7th/cmp-nvim-lua',
   'hrsh7th/cmp-path',
@@ -30,9 +31,13 @@ require("lazy").setup({
   'nvim-telescope/telescope-symbols.nvim',
   'nvim-treesitter/playground',
   'tpope/vim-fugitive',
-  'tpope/vim-rhubarb',
   'tpope/vim-surround',
   'vimwiki/vimwiki',
+  {
+    'kevinhwang91/nvim-ufo',
+    dependencies = { 'kevinhwang91/promise-async', },
+
+  },
   {
     'f3fora/nvim-texlabconfig',
     config = function()
