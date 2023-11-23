@@ -13,7 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   "brenoprata10/nvim-highlight-colors",
-  "lukas-reineke/indent-blankline.nvim",
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
   "navarasu/onedark.nvim",
   "tpope/vim-sleuth",
   'L3MON4D3/cmp_luasnip',
