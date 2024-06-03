@@ -41,7 +41,7 @@ vim.opt.updatetime = 250
 vim.o.timeout = true
 vim.o.timeoutlen = 300
 
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "-2"
 
 vim.opt.cursorline = true
 vim.opt.cursorcolumn = true

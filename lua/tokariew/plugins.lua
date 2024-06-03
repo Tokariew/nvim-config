@@ -13,7 +13,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   "brenoprata10/nvim-highlight-colors",
-  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl",   opts = {} },
   "navarasu/onedark.nvim",
   "tpope/vim-sleuth",
   'L3MON4D3/cmp_luasnip',
@@ -33,6 +33,7 @@ require("lazy").setup({
   'tpope/vim-fugitive',
   'tpope/vim-surround',
   'vimwiki/vimwiki',
+  { 'echasnovski/mini.comment',            version = false },
   {
     'kevinhwang91/nvim-ufo',
     dependencies = { 'kevinhwang91/promise-async', },
@@ -52,6 +53,8 @@ require("lazy").setup({
       "rafamadriz/friendly-snippets",
       "benfowler/telescope-luasnip.nvim",
     },
+    version = "v2.*",
+    build = "make install_jsregexp"
   },
   { 'folke/which-key.nvim', opts = {} },
   {

@@ -36,13 +36,13 @@ require('lualine').setup {
     },
     lualine_x = { 'encoding', 'fileformat', 'filetype' },
     lualine_y = { { getWords } },
-    lualine_z = { 'progress', '%l:%c' }
+    lualine_z = { 'selectioncount', 'progress', '%l:%c' }
   },
   inactive_sections = {
     lualine_a = {},
     lualine_b = {},
     lualine_c = { 'filename' },
-    lualine_x = { 'location' },
+    lualine_x = {},
     lualine_y = {},
     lualine_z = {}
   },
@@ -69,6 +69,6 @@ require('lualine').setup {
       }, },
 
   },
-  inactive_winbar = {},
+  inactive_winbar = { lualine_a = { { 'buffers', mode = 2 } }, },
   extensions = {}
 }

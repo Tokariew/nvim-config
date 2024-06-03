@@ -1,8 +1,10 @@
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 require("luasnip.loaders.from_vscode").lazy_load()
+require("luasnip.loaders.from_vscode").lazy_load({ paths = { vim.fn.stdpath("config") .. "/snips" } })
 
 luasnip.config.setup {}
+
 
 local kind_icons = {
   Text = "",
@@ -33,6 +35,7 @@ local kind_icons = {
 }
 
 cmp.setup {
+  preselect = cmp.PreselectMode.None,
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body)
@@ -42,7 +45,7 @@ cmp.setup {
     ['<C-d>'] = cmp.mapping.scroll_docs(-4),
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete {},
-    ['<CR>'] = cmp.mapping.confirm {
+    ['<C-y>'] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
       select = true,
     },
@@ -70,7 +73,7 @@ cmp.setup {
     { name = 'nvim_lsp' },
     { name = 'path' },
     { name = 'buffer' },
-    { name = 'cmdline' },
+    --{ name = 'cmdline' },
   },
   formatting = {
     format = function(entry, vim_item)

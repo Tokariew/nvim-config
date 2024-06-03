@@ -24,5 +24,6 @@ require('gitsigns').setup {
     -- Actions
     map('n', '<leader>hs', gs.stage_hunk)
     map('n', '<leader>hr', gs.reset_hunk)
-  end
+  end,
+  word_diff = true
 }
