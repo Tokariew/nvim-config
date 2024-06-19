@@ -36,7 +36,7 @@ require('lualine').setup {
     },
     lualine_x = { 'encoding', 'fileformat', 'filetype' },
     lualine_y = { { getWords } },
-    lualine_z = { 'selectioncount', 'progress', '%l:%c' }
+    lualine_z = { 'selectioncount', 'progress', '%l:%v' }
   },
   inactive_sections = {
     lualine_a = {},

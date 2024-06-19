@@ -10,20 +10,26 @@ require('gitsigns').setup {
 
     -- Navigation
     map('n', ']c', function()
-      if vim.wo.diff then return ']c' end
-      vim.schedule(function() gs.next_hunk() end)
-      return '<Ignore>'
-    end, { expr = true })
+      if vim.wo.diff then
+        vim.cmd.normal({ ']c', bang = true })
+      else
+        gs.nav_hunk('next')
+      end
+    end)
 
     map('n', '[c', function()
-      if vim.wo.diff then return '[c' end
-      vim.schedule(function() gs.prev_hunk() end)
-      return '<Ignore>'
-    end, { expr = true })
+      if vim.wo.diff then
+        vim.cmd.normal({ '[c', bang = true })
+      else
+        gs.nav_hunk('prev')
+      end
+    end)
+
 
     -- Actions
     map('n', '<leader>hs', gs.stage_hunk)
     map('n', '<leader>hr', gs.reset_hunk)
   end,
-  word_diff = true
+  word_diff = true,
+  signs_staged_enable = false
 }
