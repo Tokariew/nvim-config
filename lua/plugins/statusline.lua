@@ -2,8 +2,8 @@ return {
   {
     'echasnovski/mini.statusline',
     dependencies = {
-      "echasnovski/mini.icons",
-      "echasnovski/mini.tabline",
+      { "echasnovski/mini.icons",   opts = {} },
+      { "echasnovski/mini.tabline", opts = {} },
     },
     event = "VeryLazy",
     opts = function()

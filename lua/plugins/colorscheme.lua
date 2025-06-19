@@ -3,7 +3,7 @@ return {
     "folke/tokyonight.nvim",
     lazy = true,
     opts = {
-      style = night,
+      style = "night",
       transparent = true,
       styles = {
         sidebars = "transparent",

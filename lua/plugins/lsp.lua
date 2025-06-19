@@ -12,8 +12,18 @@ return {
     keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
     build = ":MasonUpdate",
     opts = {
-        ensure_installed = {"lua-language-server", "texlab", "shfmt", "stylua", "ruff"},
-},
+      ensure_installed = {
+        "lua-language-server",
+        "texlab",
+        "shfmt",
+        "stylua",
+        "ruff",
+        "pyright",
+        "fish-lsp",
+        "shellcheck",
+        "bash-language-server",
+      },
+    },
     ---@param opts MasonSettings | {ensure_installed: string[]}
     config = function(_, opts)
       require("mason").setup(opts)
@@ -42,7 +52,7 @@ return {
     "mason-org/mason-lspconfig.nvim",
     opts = {},
   },
-    {
+  {
     "folke/lazydev.nvim",
     ft = "lua", -- only load on lua files
     opts = {

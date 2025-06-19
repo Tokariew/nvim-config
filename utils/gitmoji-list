@@ -1,0 +1,74 @@
+🎨 - gitmoji - Improve structure / format of the code.
+⚡️ - gitmoji - Improve performance.
+🔥 - gitmoji - Remove code or files.
+🐛 - gitmoji - Fix a bug.
+🚑️ - gitmoji - Critical hotfix.
+✨ - gitmoji - Introduce new features.
+📝 - gitmoji - Add or update documentation.
+🚀 - gitmoji - Deploy stuff.
+💄 - gitmoji - Add or update the UI and style files.
+🎉 - gitmoji - Begin a project.
+✅ - gitmoji - Add, update, or pass tests.
+🔒️ - gitmoji - Fix security or privacy issues.
+🔐 - gitmoji - Add or update secrets.
+🔖 - gitmoji - Release / Version tags.
+🚨 - gitmoji - Fix compiler / linter warnings.
+🚧 - gitmoji - Work in progress.
+💚 - gitmoji - Fix CI Build.
+⬇️ - gitmoji - Downgrade dependencies.
+⬆️ - gitmoji - Upgrade dependencies.
+📌 - gitmoji - Pin dependencies to specific versions.
+👷 - gitmoji - Add or update CI build system.
+📈 - gitmoji - Add or update analytics or track code.
+♻️ - gitmoji - Refactor code.
+➕ - gitmoji - Add a dependency.
+➖ - gitmoji - Remove a dependency.
+🔧 - gitmoji - Add or update configuration files.
+🔨 - gitmoji - Add or update development scripts.
+🌐 - gitmoji - Internationalization and localization.
+✏️ - gitmoji - Fix typos.
+💩 - gitmoji - Write bad code that needs to be improved.
+⏪️ - gitmoji - Revert changes.
+🔀 - gitmoji - Merge branches.
+📦️ - gitmoji - Add or update compiled files or packages.
+👽️ - gitmoji - Update code due to external API changes.
+🚚 - gitmoji - Move or rename resources (e.g.: files, paths, routes).
+📄 - gitmoji - Add or update license.
+💥 - gitmoji - Introduce breaking changes.
+🍱 - gitmoji - Add or update assets.
+♿️ - gitmoji - Improve accessibility.
+💡 - gitmoji - Add or update comments in source code.
+🍻 - gitmoji - Write code drunkenly.
+💬 - gitmoji - Add or update text and literals.
+🗃️ - gitmoji - Perform database related changes.
+🔊 - gitmoji - Add or update logs.
+🔇 - gitmoji - Remove logs.
+👥 - gitmoji - Add or update contributor(s).
+🚸 - gitmoji - Improve user experience / usability.
+🏗️ - gitmoji - Make architectural changes.
+📱 - gitmoji - Work on responsive design.
+🤡 - gitmoji - Mock things.
+🥚 - gitmoji - Add or update an easter egg.
+🙈 - gitmoji - Add or update a .gitignore file.
+📸 - gitmoji - Add or update snapshots.
+⚗️ - gitmoji - Perform experiments.
+🔍️ - gitmoji - Improve SEO.
+🏷️ - gitmoji - Add or update types.
+🌱 - gitmoji - Add or update seed files.
+🚩 - gitmoji - Add, update, or remove feature flags.
+🥅 - gitmoji - Catch errors.
+💫 - gitmoji - Add or update animations and transitions.
+🗑️ - gitmoji - Deprecate code that needs to be cleaned up.
+🛂 - gitmoji - Work on code related to authorization, roles and permissions.
+🩹 - gitmoji - Simple fix for a non-critical issue.
+🧐 - gitmoji - Data exploration/inspection.
+⚰️ - gitmoji - Remove dead code.
+🧪 - gitmoji - Add a failing test.
+👔 - gitmoji - Add or update business logic.
+🩺 - gitmoji - Add or update healthcheck.
+🧱 - gitmoji - Infrastructure related changes.
+🧑‍💻 - gitmoji - Improve developer experience.
+💸 - gitmoji - Add sponsorships or money related infrastructure.
+🧵 - gitmoji - Add or update code related to multithreading or concurrency.
+🦺 - gitmoji - Add or update code related to validation.
+✈️ - gitmoji - Improve offline support.

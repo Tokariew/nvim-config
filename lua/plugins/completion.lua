@@ -1,19 +1,51 @@
 return {
   'saghen/blink.cmp',
   dependencies = { 'rafamadriz/friendly-snippets',
-  'folke/lazydev.nvim'},
+    'folke/lazydev.nvim' },
 
-   version = '1.*',
+  version = '1.*',
   opts = {
     sources = {
-      default = {'lazydev', 'lsp', 'path', 'snippets', 'buffer'},
-        providers = {
+      default = { 'lazydev', 'lsp', 'path', 'snippets', 'buffer' },
+      providers = {
         lazydev = {
           name = "LazyDev",
           module = "lazydev.integrations.blink",
           score_offset = 100,
+        },
       },
     },
-  },
-}
+    signature = { enabled = true },
+    completion = {
+      documentation = {
+        auto_show = true,
+        auto_show_delay_ms = 500,
+      },
+      menu = {
+        draw = {
+          columns = { { "label", "label_description", gap = 1 }, { "kind_icon", gap = 1, "kind" }, },
+          components = {
+            kind_icon = {
+              text = function(ctx)
+                local kind_icon, _, _ = require('mini.icons').get('lsp', ctx.kind)
+                return kind_icon
+              end,
+              -- (optional) use highlights from mini.icons
+              highlight = function(ctx)
+                local _, hl, _ = require('mini.icons').get('lsp', ctx.kind)
+                return hl
+              end,
+            },
+            kind = {
+              -- (optional) use highlights from mini.icons
+              highlight = function(ctx)
+                local _, hl, _ = require('mini.icons').get('lsp', ctx.kind)
+                return hl
+              end,
+            }
+          }
+        }
+      }
+    }
+  }
 }
