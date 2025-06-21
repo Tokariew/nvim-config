@@ -35,7 +35,7 @@ return {
       statuscolumn = {
         enabled = true,
         git = {
-          patterns = {"MiniDiffSign" },
+          patterns = { "MiniDiffSign" },
         },
       },
       notifier = {

@@ -16,14 +16,33 @@ return
     opts = {
       ensure_installed = {
         "bash",
+        "bibtex",
         "c",
+        "csv",
+        "diff",
+        "html",
+        "javascript",
+        "jsdoc",
+        "json",
+        "jsonc",
+        "latex",
+        "lua",
+        "luadoc",
+        "luap",
         "markdown",
         "markdown_inline",
+        "printf",
         "python",
-        "bibtex",
-        "latex",
         "python",
-        "diff",
+        "query",
+        "regex",
+        "toml",
+        "tsx",
+        "typescript",
+        "vim",
+        "vimdoc",
+        "xml",
+        "yaml",
       },
       auto_install = true,
       highlight = { enable = true },
@@ -66,8 +85,8 @@ return
         },
       },
     },
-      config = function (_, opts)
-        require('nvim-treesitter.configs').setup(opts)
-      end
+    config = function(_, opts)
+      require('nvim-treesitter.configs').setup(opts)
+    end
   },
 }

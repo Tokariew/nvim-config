@@ -54,7 +54,7 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   command = "%s/\\s\\+$//e",
 })
 
-vim.api.nvim_create_autocmd({'InsertLeave', 'TextChanged', 'FocusLost'},{
+vim.api.nvim_create_autocmd({ 'InsertLeave', 'TextChanged', 'FocusLost' }, {
   group = augroup("Autosave"),
   pattern = "*",
   command = "silent! write",

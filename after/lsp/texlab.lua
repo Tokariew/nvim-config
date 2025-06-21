@@ -4,7 +4,7 @@ vim.lsp.config(
       texlab = {
         build = {
           executuble = 'latexmk',
-          args = {"-lualatex", "-interaction=nonstopmode", "-synctex=1", "%f"},
+          args = { "-lualatex", "-interaction=nonstopmode", "-synctex=1", "%f" },
           onSave = false,
           forwardSearchAfter = false,
         },
