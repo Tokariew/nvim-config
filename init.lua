@@ -1,1 +1,1 @@
-require('tokariew')
+require("tokariew")

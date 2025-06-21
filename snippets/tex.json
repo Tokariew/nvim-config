@@ -1,0 +1,86 @@
+{
+  "annotacja": {
+    "prefix": "anot",
+    "body": [
+      "\\anot{@${1:user} / $CURRENT_DATE.$CURRENT_MONTH.$CURRENT_YEAR}",
+      "{${2:ocena}}{}",
+      "{${3:do kogo}}",
+      "{}"
+    ],
+    "description": "annotacja"
+  },
+  "dktodo": {
+    "prefix": "dktodo",
+    "body": "\\tododk{todo}\n{${1:treść}}\n{}\n{${2:kto}}"
+  },
+  "ifthenelse": {
+    "prefix": "ifthen",
+    "body": [
+      "\\ifthenelse{\\equal{${1:pierwsza wartosc}{${2:druga wartosc}}}}",
+      "{${2:gdy prawda}}",
+      "{${3:gdy fałsz}}"
+    ],
+    "description": "ifthenelse"
+  },
+  "rcs": {
+    "prefix": "rcs",
+    "body": [
+      "\\RCS$Change: 1 $",
+      "\\UpdateChangeNumber",
+      ""
+    ],
+    "description": "rcs"
+  },
+  "uwaga minipage": {
+    "prefix": "uwaga",
+    "body": [
+      "\\begin{minipage}{\\linewidth}",
+      "    \\begin{minipage}[left]{.2\\linewidth}",
+      "        \\begin{tikzpicture}[scale=.2]",
+      "            \\input{../../../pic_objects/uwaga.pgf}",
+      "        \\end{tikzpicture}",
+      "    \\end{minipage}",
+      "    \\begin{minipage}[right]{.78\\linewidth}",
+      "        \\textbf{Uwaga!}\\newline",
+      "        ${1:treść uwagi}",
+      "    \\end{minipage}",
+      "\\end{minipage}",
+      ""
+    ],
+    "description": "uwaga minipage"
+  },
+  "uwaga todo": {
+    "prefix": "uwaga_todo",
+    "body": [
+      "\\textbf{${1:kto} $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE:} "
+    ],
+    "description": "uwaga todo"
+  },
+  "user todo": {
+    "prefix": "todo",
+    "body": [
+      "\\todo${1:user}{todo}",
+      "{${2:treść}}",
+      "{} %uwagi",
+      "{${3:do kogo}}"
+    ],
+    "description": "user todo"
+  },
+  "uwagatodo": {
+    "prefix": "uwagatodo",
+    "body": "\\textbf{DK ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}:} ",
+    "description": "Uwaga w todo"
+  },
+  "wynik": {
+    "prefix": "wynik",
+    "body": "\\textbf{Wynik cząstkowy:} ",
+    "description": "Procedury -- wyniki"
+  },
+  "Wynik cząstkowy procedury": {
+    "prefix": "wynik",
+    "body": [
+      "\\textbf{Wynik cząstkowy:} "
+    ],
+    "description": "Wynik cząstkowy procedury"
+  }
+}

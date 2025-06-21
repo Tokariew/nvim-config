@@ -1,7 +1,7 @@
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
 
-vim.opt.encoding = 'utf-8'
+vim.opt.encoding = "utf-8"
 
 vim.wo.number = true
 vim.wo.relativenumber = true
@@ -48,3 +48,18 @@ vim.opt.cursorcolumn = true
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+vim.diagnostic.config({
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = '󰅚 ',
+      [vim.diagnostic.severity.WARN] = '󰀪 ',
+      [vim.diagnostic.severity.HINT] = "󰌶 ",
+      [vim.diagnostic.severity.INFO] = " ",
+    },
+  },
+})
+
+vim.opt.foldlevel = 90
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.opt.foldtext = ""
