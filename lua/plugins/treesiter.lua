@@ -1,14 +1,12 @@
-return {
+return
+{
   {
     "nvim-treesitter/nvim-treesitter",
+    dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
     version = false,
     build = ":TSUpdate",
     event = "VeryLazy",
     lazy = vim.fn.argc(-1) == 0,
-    init = function(plugin)
-      require("lazy.core.loader").add_to_rtp(plugin)
-      require("nvim-treesitter.query_predicates")
-    end,
     cmd = { "TSupdateSync", "TSUpdate", "TSInstall" },
     keys = {
       { "<c-space>", desc = "Increment Selection" },
@@ -16,20 +14,30 @@ return {
     },
     opts_extend = { "ensure_installed" },
     opts = {
-      ensure_installed = "all",
+      ensure_installed = {
+        "bash",
+        "c",
+        "markdown",
+        "markdown_inline",
+        "python",
+        "bibtex",
+        "latex",
+        "python",
+        "diff",
+      },
       auto_install = true,
       highlight = { enable = true },
-      indent = { enable = true, disable = { "python" } },
+      indent = { enable = true },
       incremental_selection = {
         enable = true,
         keymaps = {
           init_selection = "<c-a>",
           node_incremental = "grn",
           scope_incremental = "<c-s>",
-          node_decremental = "<M-space>",
+          node_decremental = "<M-space>"
         },
       },
-      textobject = {
+      textobjects = {
         select = {
           enable = true,
           lookahead = true,
@@ -45,20 +53,21 @@ return {
         move = {
           enable = true,
           set_jumps = true,
-          goto_next_start = { ["]f"] = "@function.outer", ["]c"] = "@class.outer", ["]a"] = "@parameter.inner" },
-          goto_next_end = { ["]F"] = "@function.outer", ["]C"] = "@class.outer", ["]A"] = "@parameter.inner" },
-          goto_previous_start = { ["[f"] = "@function.outer", ["[c"] = "@class.outer", ["[a"] = "@parameter.inner" },
-          goto_previous_end = { ["[F"] = "@function.outer", ["[C"] = "@class.outer", ["[A"] = "@parameter.inner" },
+          goto_next_start = { [']f'] = "@function.outer", [']]'] = '@class.outer', [']a'] = '@parameter.inner' },
+          goto_next_end = { [']F'] = "@function.outer", [']['] = '@class.outer', [']A'] = '@parameter.inner' },
+          goto_previous_start = { ['[f'] = "@function.outer", ['[['] = '@class.outer', ['[a'] = '@parameter.inner' },
+          goto_previous_end = { ['[F'] = "@function.outer", ['[]'] = '@class.outer', ['[A'] = '@parameter.inner' },
         },
         swap = {
           enable = true,
           swap_next = { ['<leader>a'] = '@parameter.inner', },
           swap_previous = { ['<leader>A'] = '@parameter.inner', },
+
         },
       },
     },
-    config = function(_, opts)
-      require('nvim-treesitter.configs').setup(opts)
-    end
+      config = function (_, opts)
+        require('nvim-treesitter.configs').setup(opts)
+      end
   },
 }
