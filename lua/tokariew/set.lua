@@ -59,3 +59,8 @@ vim.diagnostic.config({
         },
     },
 })
+
+vim.opt.foldlevel = 90
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+vim.opt.foldtext = ""

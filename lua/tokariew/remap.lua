@@ -1,0 +1,8 @@
+vim.keymap.set("n", "<leader>q", ":wq<cr>")
+vim.keymap.set("n", "<leader>Q", ":qa<cr>")
+vim.keymap.set("n", "<leader>w", ":w<cr>")
+vim.keymap.set("n", "<leader>bd", ":bd<cr>")
+vim.keymap.set("n", "<leader><space>", "bnext<cr>")
+vim.keympa.set("v", "<", "<gv")
+vim.keympa.set("v", ">", ">gv")
+vim.keymap.set("n", "\\\\", ":let@/=''<cr>", { silent = true })
