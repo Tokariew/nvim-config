@@ -13,15 +13,16 @@ return {
     build = ":MasonUpdate",
     opts = {
       ensure_installed = {
+        "bash-language-server",
+        "debugpy",
+        "fish-lsp",
         "lua-language-server",
-        "texlab",
+        "pyright",
+        "ruff",
+        "shellcheck",
         "shfmt",
         "stylua",
-        "ruff",
-        "pyright",
-        "fish-lsp",
-        "shellcheck",
-        "bash-language-server",
+        "texlab",
       },
     },
     ---@param opts MasonSettings | {ensure_installed: string[]}
