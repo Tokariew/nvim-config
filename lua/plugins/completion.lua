@@ -15,6 +15,13 @@ return {
         },
       },
     },
+    keymap = {
+      preset = 'default',
+      ['<C-e>'] =  { 'show_signature', 'hide_signature', 'fallback' },
+      ['<C-k>'] = { 'snippet_forward', 'fallback' },
+      ['<Tab>'] = false,
+      ['<S-Tab>'] = false,
+    },
     signature = { enabled = true },
     completion = {
       documentation = {
