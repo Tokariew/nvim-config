@@ -6,7 +6,7 @@ vim.lsp.config(
     settings = {
       texlab = {
         build = {
-          executuble = 'latexmk',
+          executable = 'latexmk',
           args = { latex_engine, "-interaction=nonstopmode", "-synctex=1", "%f" },
           onSave = false,
           forwardSearchAfter = false,
