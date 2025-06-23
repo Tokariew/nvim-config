@@ -16,10 +16,10 @@ vim.lsp.config(
           modifyLineBreaks = true,
         },
         forwardSearch = {
-          executuble = "zathura",
+          executable = "zathura",
           args = {
             '--synctex-editor-command',
-            [[nvim-texlabconfig -file '%%%{input}' -line %%%{line} -server]] .. vim.v.servername,
+            [[nvim-texlabconfig -file '%%%{input}' -line %%%{line} -server ]] .. vim.v.servername,
             '--synctex-forward',
             '%l:1:%f',
             '%p'
