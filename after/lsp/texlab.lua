@@ -1,15 +1,18 @@
+local user = os.getenv('USER')
+local latex_engine = (user == 'tokariew') and '-lualatex' or '-pdf'
+
 vim.lsp.config(
   'texlab', {
     settings = {
       texlab = {
         build = {
           executuble = 'latexmk',
-          args = { "-lualatex", "-interaction=nonstopmode", "-synctex=1", "%f" },
+          args = { latex_engine, "-interaction=nonstopmode", "-synctex=1", "%f" },
           onSave = false,
           forwardSearchAfter = false,
         },
         latexindent = {
-          ["local"] = '/home/' .. os.getenv('USER') .. '/.config/latexindent.yaml',
+          ["local"] = '/home/' .. user .. '/.config/latexindent.yaml',
           modifyLineBreaks = true,
         },
         forwardSearch = {

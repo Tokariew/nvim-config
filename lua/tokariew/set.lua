@@ -48,6 +48,7 @@ vim.opt.cursorcolumn = true
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
+vim.opt.laststatus = 3
 vim.diagnostic.config({
   signs = {
     text = {
