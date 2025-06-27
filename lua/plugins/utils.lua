@@ -5,7 +5,7 @@ return {
   {
     'jbyuki/venn.nvim',
     keys = {
-      { "f",         "<cmd>VBox<cr>",          mode = 'v',                desc = "Make a box" },
+      { "f",         ":VBox<cr>",          mode = 'v',                desc = "Make a box" },
       { "<leader>v", ":lua Toggle_venn()<cr>", desc = "Toggle Venn drawing" },
     },
     config = function()

@@ -1,4 +1,5 @@
 #! /bin/sh
 unset GTK_USE_PORTAL
 ps -aux | grep tabbed | grep nvim || $(tabbed -n nvim -d >/tmp/nvim.xid)
-zathura -e "$(cat /tmp/nvim.xid)" "$@"
+zathura -e "$(cat /tmp/nvim.xid)" "$@" &
+disown
