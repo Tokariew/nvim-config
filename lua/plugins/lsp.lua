@@ -28,6 +28,7 @@ return {
         "stylua",
         "taplo",
         "texlab",
+        "tinymist",
       },
     },
     ---@param opts MasonSettings | {ensure_installed: string[]}
