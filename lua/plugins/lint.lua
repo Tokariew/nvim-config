@@ -15,7 +15,7 @@ return {
       {
         "<leader>ft",
         function()
-          require("nvim-lint").try_lint()
+          require("lint").try_lint()
         end,
         desc = "[F]ormat with lin[t]"
       }
@@ -25,7 +25,7 @@ return {
       lint.linters_by_ft = opts.linters_by_ft
 
       vim.api.nvim_create_autocmd(opts.events, {
-        group = vim.api.nvim_create_augroup("nvim-lint", { clear = true }),
+        group = vim.api.nvim_create_augroup("lint", { clear = true }),
         callback = function()
           lint.try_lint()
         end
