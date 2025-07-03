@@ -17,6 +17,9 @@ return {
       scope = {
         enabled = true,
       },
+      image = {
+        enabled = true,
+      },
       indent = {
         enabled = true,
         indent = {
