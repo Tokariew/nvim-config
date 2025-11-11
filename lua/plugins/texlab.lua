@@ -1,10 +1,10 @@
 return {
   {
-    'f3fora/nvim-texlabconfig',
+    "f3fora/nvim-texlabconfig",
     config = function()
-      require('texlabconfig').setup(config)
+      require("texlabconfig").setup(config)
     end,
-    ft = { 'tex', 'bib' }, -- Lazy-load on filetype
-    build = 'go build'
-  }
+    ft = { "tex", "bib" }, -- Lazy-load on filetype
+    build = "go build",
+  },
 }

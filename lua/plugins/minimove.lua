@@ -1,10 +1,10 @@
 return {
   {
-    'echasnovski/mini.move',
-    opts = {}
+    "echasnovski/mini.move",
+    opts = {},
   },
   {
-    'echasnovski/mini.surround',
+    "echasnovski/mini.surround",
     opts = {},
-  }
+  },
 }

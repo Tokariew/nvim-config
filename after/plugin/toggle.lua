@@ -15,11 +15,13 @@ function ToggleWhitespaceDisplay()
     list_toggle_state.enabled = vim.o.list
     list_toggle_state.list = vim.o.list
     list_toggle_state.listchars = vim.o.listchars
-    list_toggle_state.diagnostics_virtual_text = vim.diagnostic.config().virtual_text
+    list_toggle_state.diagnostics_virtual_text =
+      vim.diagnostic.config().virtual_text
 
     -- Safe check for inlay hints
     if vim.lsp.inlay_hint and vim.lsp.inlay_hint.is_enabled then
-      local ok, enabled = pcall(vim.lsp.inlay_hint.is_enabled, { bufnr = bufnr })
+      local ok, enabled =
+        pcall(vim.lsp.inlay_hint.is_enabled, { bufnr = bufnr })
       if ok then
         list_toggle_state.inlay_hints_enabled = enabled
       else
@@ -46,13 +48,24 @@ function ToggleWhitespaceDisplay()
     vim.o.listchars = list_toggle_state.listchars
     vim.cmd("silent! IBLToggle")
 
-    vim.diagnostic.config({ virtual_text = list_toggle_state.diagnostics_virtual_text })
+    vim.diagnostic.config({
+      virtual_text = list_toggle_state.diagnostics_virtual_text,
+    })
     if vim.lsp.inlay_hint and list_toggle_state.inlay_hints_enabled ~= nil then
-      pcall(vim.lsp.inlay_hint.enable, list_toggle_state.inlay_hints_enabled, { bufnr = bufnr })
+      pcall(
+        vim.lsp.inlay_hint.enable,
+        list_toggle_state.inlay_hints_enabled,
+        { bufnr = bufnr }
+      )
     end
 
     print("Whitespace and LSP inline info restored")
   end
 end
 
-vim.keymap.set("n", "<leader>tw", ToggleWhitespaceDisplay, { desc = "Toggle whitespace + LSP info" })
+vim.keymap.set(
+  "n",
+  "<leader>tw",
+  ToggleWhitespaceDisplay,
+  { desc = "Toggle whitespace + LSP info" }
+)

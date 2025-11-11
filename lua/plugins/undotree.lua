@@ -1,5 +1,5 @@
 return {
-  'jiaoshijie/undotree',
+  "jiaoshijie/undotree",
   dependencies = "nvim-lua/plenary.nvim",
   event = "VeryLazy",
   opts = {
@@ -9,5 +9,5 @@ return {
   },
   keys = {
     { "<F6>", "<cmd>lua require('undotree').toggle()<cr>" },
-  }
+  },
 }

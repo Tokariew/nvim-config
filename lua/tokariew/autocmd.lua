@@ -5,7 +5,7 @@ end
 vim.api.nvim_create_autocmd("TextYankPost", {
   group = augroup("highlight_yank"),
   callback = function()
-    (vim.hl or vim.highlight).on_yank({ higroup = 'IncSearch', timeout = 40 })
+    (vim.hl or vim.highlight).on_yank({ higroup = "IncSearch", timeout = 40 })
   end,
 })
 
@@ -23,7 +23,10 @@ vim.api.nvim_create_autocmd("BufReadPost", {
   callback = function(event)
     local exclude = { "gitcommit" }
     local buf = event.buf
-    if vim.tbl_contains(exclude, vim.bo[buf].filetype) or vim.b[buf].kopytko_last_loc then
+    if
+      vim.tbl_contains(exclude, vim.bo[buf].filetype)
+      or vim.b[buf].kopytko_last_loc
+    then
       return
     end
     vim.b[buf].kopytko_last_loc = true
@@ -46,15 +49,13 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   end,
 })
 
-
-
 vim.api.nvim_create_autocmd({ "BufWritePre" }, {
   group = augroup("die_my_trailing_spaces"),
   pattern = "*",
   command = "%s/\\s\\+$//e",
 })
 
-vim.api.nvim_create_autocmd({ 'InsertLeave', 'TextChanged', 'FocusLost' }, {
+vim.api.nvim_create_autocmd({ "InsertLeave", "TextChanged", "FocusLost" }, {
   group = augroup("Autosave"),
   pattern = "*",
   command = "silent! write",
