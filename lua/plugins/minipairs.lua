@@ -5,6 +5,6 @@ return {
     opts = {
       markdown = true,
       skip_ts = { "string" },
-    }
-  }
+    },
+  },
 }

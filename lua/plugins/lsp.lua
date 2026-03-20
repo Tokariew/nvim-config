@@ -29,6 +29,7 @@ return {
         "taplo",
         "texlab",
         "tinymist",
+        "ty",
       },
     },
     ---@param opts MasonSettings | {ensure_installed: string[]}

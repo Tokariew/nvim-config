@@ -1,10 +1,10 @@
 return {
   {
-    'echasnovski/mini.diff',
+    "echasnovski/mini.diff",
     opts = {
       view = {
-        style = 'sign',
-      }
-    }
-  }
+        style = "sign",
+      },
+    },
+  },
 }

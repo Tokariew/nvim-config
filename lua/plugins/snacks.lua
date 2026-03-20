@@ -1,10 +1,16 @@
 local hl_list = {}
-for i, color in pairs({ '#662121', '#767621', '#216631', '#325a5e', '#324b7b', '#562155' }) do
-  local name = 'Wrum' .. i
+for i, color in pairs({
+  "#662121",
+  "#767621",
+  "#216631",
+  "#325a5e",
+  "#324b7b",
+  "#562155",
+}) do
+  local name = "Wrum" .. i
   vim.api.nvim_set_hl(0, name, { fg = color })
-  table.insert(hl_list, name);
+  table.insert(hl_list, name)
 end
-
 
 return {
   {

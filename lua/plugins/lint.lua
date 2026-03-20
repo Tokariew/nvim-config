@@ -17,8 +17,8 @@ return {
         function()
           require("lint").try_lint()
         end,
-        desc = "[F]ormat with lin[t]"
-      }
+        desc = "[F]ormat with lin[t]",
+      },
     },
     config = function(_, opts)
       local lint = require("lint")
@@ -28,7 +28,7 @@ return {
         group = vim.api.nvim_create_augroup("lint", { clear = true }),
         callback = function()
           lint.try_lint()
-        end
+        end,
       })
     end,
   },
