@@ -13,6 +13,7 @@ vim.lsp.config("texlab", {
       latexindent = {
         ["local"] = "/home/" .. user .. "/.config/latexindent.yaml",
         modifyLineBreaks = true,
+        replacement = "-rv",
       },
       forwardSearch = {
         executable = "zathura",
