@@ -1,4 +1,4 @@
-vim.lsp.config("taplo", {
+return {
   settings = {
     format = {
       alignEntries = true,
@@ -11,4 +11,4 @@ vim.lsp.config("taplo", {
       reorderKeys = true,
     },
   },
-})
+}

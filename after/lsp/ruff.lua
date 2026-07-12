@@ -1,4 +1,4 @@
-vim.lsp.config("ruff", {
+return {
   init_options = {
     configuration = "~/.config/ruff/ruff.toml",
     settings = {
@@ -7,4 +7,4 @@ vim.lsp.config("ruff", {
       lint = { enable = true },
     },
   },
-})
+}

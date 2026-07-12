@@ -1,7 +1,7 @@
 local user = os.getenv("USER")
 local latex_engine = (user == "tokariew") and "-lualatex" or "-pdf"
 
-vim.lsp.config("texlab", {
+return {
   settings = {
     texlab = {
       build = {
@@ -27,4 +27,4 @@ vim.lsp.config("texlab", {
       },
     },
   },
-})
+}
