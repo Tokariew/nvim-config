@@ -7,5 +7,5 @@ vim.filetype.add({
     network = "systemd",
     pod = "systemd",
     volume = "systemd",
-  }
+  },
 })

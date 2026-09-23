@@ -1,0 +1,58 @@
+{
+  "Podsumowanie": {
+    "prefix": "podsumowanie",
+    "body": [
+      "=======================================================================",
+      "",
+      "Wszystkie testy zakończyły się powodzeniem",
+      "",
+      "======================================================================="
+    ],
+    "description": "Podsumowanie do raportu"
+  },
+  "Wynik": {
+    "prefix": "wyniczek",
+    "body": [
+      "Wynik: Pozytywny",
+      "${1:Czemu ten test jest pozytywny?}"
+    ],
+    "description": "Wynik cząstkowy"
+  },
+  "Autor": {
+    "prefix": "autorraportu",
+    "body": [
+      "Autor: Damian Korbuszewski",
+      "Date: $CURRENT_DATE.$CURRENT_MONTH.$CURRENT_YEAR",
+      "",
+      "Urządzenie/a SN:",
+      "    ${1:seria urządzenia} (${2:numer seryjny}) w stanie ${3:jaki stan ziomku}"
+    ]
+  },
+  "Linie": {
+    "prefix": "linia",
+    "body": "======================================================================="
+  },
+  "beggin": {
+    "prefix": "frontmatter",
+    "body": [
+      "=======================================================================",
+      "%REF_DATE: $CURRENT_YEAR/$CURRENT_MONTH/$CURRENT_DATE",
+      "%REF_PROC: {${1:dokuemnt}}{${2:rozdział}}",
+      "=======================================================================",
+      "",
+      "${3:tytył testu}",
+      "",
+      "Na podstawie dokumentu",
+      "",
+      "${4:NRdokumentu} - $3",
+      "",
+      "=======================================================================",
+      "",
+      "WYNIK TESTU: POZYTYWNY",
+      "",
+      "=======================================================================",
+      "",
+      "${5:}"
+    ]
+  }
+}

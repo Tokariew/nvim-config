@@ -1,0 +1,28 @@
+vim.pack.add({ "https://github.com/folke/todo-comments.nvim" })
+
+require("todo-comments").setup({})
+
+vim.keymap.set("n", "]t", function()
+  require("todo-comments").jump_next()
+end, { desc = "Next Todo Comment" })
+vim.keymap.set("n", "[t", function()
+  require("todo-comments").jump_prev()
+end, { desc = "Previous Todo Comment" })
+vim.keymap.set("n", "<leader>xt", "<cmd>Trouble todo toggle<cr>", {
+  desc = "Todo (Trouble)",
+})
+vim.keymap.set(
+  "n",
+  "<leader>xT",
+  "<cmd>Trouble todo toggle filter = {tag = {TODO,FIX,FIXME}}<cr>",
+  { desc = "Todo/Fix/Fixme (Trouble)" }
+)
+vim.keymap.set("n", "<leader>st", "<cmd>TodoFzfLua<cr>", { desc = "Todo" })
+vim.keymap.set(
+  "n",
+  "<leader>sT",
+  "<cmd>TodoFzfLua keywords=TODO,FIX,FIXME<cr>",
+  {
+    desc = "Todo/Fix/Fixme",
+  }
+)

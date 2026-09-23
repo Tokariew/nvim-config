@@ -1,13 +1,11 @@
-return {
-  "jiaoshijie/undotree",
-  dependencies = "nvim-lua/plenary.nvim",
-  event = "VeryLazy",
-  opts = {
-    window = {
-      winblend = 0,
-    },
+vim.pack.add({ "https://github.com/jiaoshijie/undotree" })
+
+require("undotree").setup({
+  window = {
+    winblend = 0,
   },
-  keys = {
-    { "<F6>", "<cmd>lua require('undotree').toggle()<cr>" },
-  },
-}
+})
+
+vim.keymap.set("n", "<F6>", function()
+  require("undotree").toggle()
+end, { desc = "Toggle Undotree" })

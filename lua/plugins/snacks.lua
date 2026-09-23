@@ -1,3 +1,5 @@
+vim.pack.add({ "https://github.com/folke/snacks.nvim" })
+
 local hl_list = {}
 for i, color in pairs({
   "#662121",
@@ -12,47 +14,50 @@ for i, color in pairs({
   table.insert(hl_list, name)
 end
 
-return {
-  {
-    "folke/snacks.nvim",
-    ---@type snacks.Config
-    opts = {
-      animate = {
-        fps = 240,
-      },
-      scope = {
-        enabled = true,
-      },
-      image = {
-        enabled = true,
-      },
-      indent = {
-        enabled = true,
-        indent = {
-          char = "┊",
-          hl = hl_list,
-        },
-        scope = {
-          enabled = true,
-          underline = true,
-          char = "┊",
-        },
-      },
-      scroll = {
-        enabled = true,
-      },
-      statuscolumn = {
-        enabled = true,
-        git = {
-          patterns = { "MiniDiffSign" },
-        },
-      },
-      notifier = {
-        enabled = true,
-      },
-      words = {
-        enabled = true,
-      },
+require("snacks").setup({
+  animate = {
+    fps = 240,
+  },
+  scope = {
+    enabled = true,
+  },
+  image = {
+    enabled = true,
+  },
+  indent = {
+    enabled = true,
+    indent = {
+      char = "┊",
+      hl = hl_list,
+    },
+    scope = {
+      enabled = true,
+      underline = true,
+      char = "┊",
     },
   },
-}
+  scroll = {
+    enabled = true,
+  },
+  statuscolumn = {
+    enabled = true,
+    git = {
+      patterns = { "MiniDiffSign" },
+    },
+  },
+  notifier = {
+    enabled = true,
+  },
+  words = {
+    enabled = true,
+  },
+})
+
+vim.api.nvim_create_autocmd("LspProgress", {
+  callback = function()
+    vim.notify(vim.lsp.status(), "info", {
+      id = "lsp_progress",
+      title = "LSP Progress",
+    })
+  end,
+})

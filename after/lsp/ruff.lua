@@ -1,10 +1,13 @@
 return {
   init_options = {
-    configuration = "~/.config/ruff/ruff.toml",
     settings = {
-      organizeimports = true,
-      showsyntaxerrors = true,
+      configuration = vim.fn.expand("~/.config/ruff/ruff.toml"),
+      organizeImports = true,
+      showSyntaxErrors = true,
       lint = { enable = true },
     },
   },
+  on_attach = function(client)
+    client.server_capabilities.hoverProvider = false
+  end,
 }

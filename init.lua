@@ -1,1 +1,2 @@
-require("tokariew")
+require("config")
+require("plugins")

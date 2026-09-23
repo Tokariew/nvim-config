@@ -1,0 +1,5 @@
+require("config.set")
+require("config.autocmd")
+require("config.ui2")
+require("config.remap")
+require("config.update_emoji")

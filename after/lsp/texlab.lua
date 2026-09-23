@@ -11,15 +11,18 @@ return {
         forwardSearchAfter = false,
       },
       latexindent = {
-        ["local"] = "/home/" .. user .. "/.config/latexindent.yaml",
+        ["local"] = vim.fn.expand("~/.config/latexindent.yaml"),
         modifyLineBreaks = true,
       },
       forwardSearch = {
         executable = "zathura",
         args = {
           "--synctex-editor-command",
-          [[nvim-texlabconfig -file '%%%{input}' -line %%%{line} -server ]]
-            .. vim.v.servername,
+          vim.fn.shellescape(
+            vim.fs.joinpath(vim.fn.expand("~/.local/bin"), "nvim-texlabconfig")
+          )
+            .. [[ -file '%%%{input}' -line %%%{line} -server ]]
+            .. vim.fn.shellescape(vim.v.servername),
           "--synctex-forward",
           "%l:1:%f",
           "%p",
