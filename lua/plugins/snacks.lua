@@ -15,6 +15,14 @@ for i, color in pairs({
 end
 
 require("snacks").setup({
+  input = {
+    enabled = true,
+    icon = " ",
+    icon_pos = "left",
+    prompt_pos = "title",
+    win = { style = "input" },
+  },
+
   animate = {
     fps = 240,
   },
