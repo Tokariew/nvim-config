@@ -11,7 +11,11 @@ return {
         forwardSearchAfter = false,
       },
       latexindent = {
-        ["local"] = vim.fn.expand("~/.config/latexindent.yaml"),
+        ["local"] = vim.fs.joinpath(
+          vim.fn.stdpath("config"),
+          "utils",
+          "latexindent.yaml"
+        ),
         modifyLineBreaks = true,
         replacement = "-rv",
       },

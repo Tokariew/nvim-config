@@ -1,0 +1,77 @@
+# indentPreamble: 1
+defaultIndent: "    "
+
+indentAfterHeadings:
+    chapter:
+        indentAfterThisHeading: 1
+        level: 1
+
+    section:
+        indentAfterThisHeading: 1
+        level: 2
+
+    subsection:
+        indentAfterThisHeading: 1
+        level: 3
+
+    subsubsection:
+        indentAfterThisHeading: 1
+        level: 4
+
+indentAfterItems:
+    itemize: 1
+    itemize*: 1
+    enumerate: 1
+    enumerate*: 1
+    description: 1
+    description*: 1
+
+indentRules:
+    chapter: "    "
+    section: "    "
+
+modifyLineBreaks:
+    textWrapOptions:
+        columns: 80
+        multipleSpacesToSingle: 1
+        huge: overflow
+        when: after
+        blocksBeginWith:
+            a-z: 1
+            A-Z: 1
+            0-9: 1
+            other: \\texttt\{|\\scalebox\{|\\textit\{|\\emph\{|\\textsl\{|\\textit\{|\\textbf\{|\\label\{
+        blocksFollow:
+            other: \\\]|\\item(?:\h|\[)|\\\\|\\newline
+
+verbatimEnvironments:
+    tabularx: 1
+    Verbatim: 1
+    clicode: 1
+
+specialBeginEnd:
+  Tokariew:
+    begin: \\todo[a-zA-Z]+
+    end: (?:\s*\{(?:[^{}]|\{[^{}]*\})*\})+
+    lookForThis: verbatim
+
+replacements:
+  -
+    amalgamate: 0
+  -
+    when: before
+    substitution: |-
+        s/(\\\\|\\newline)\s*/$1\n/sg
+
+  -
+    when: after
+    substitution: |-
+        s/^ {4}(?= *\\(?:subfile|label)\b)//mg
+  -
+    when: after
+    substitution: |-
+        s/^ {4}(?= *\\end\{document\}$)//mg
+  -
+    when: after
+    substitution: |-
+        s/^([ ]*)([[:upper:]][^\n]*)\n\1([[:alpha:]]\S+) ([[:alpha:]].*)$/(length("$1$2 $3") <= 80 ? "$1$2 $3\n$1$4" : "$1$2\n$1$3 $4")/mge

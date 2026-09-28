@@ -1,7 +1,11 @@
 return {
   init_options = {
     settings = {
-      configuration = vim.fn.expand("~/.config/ruff/ruff.toml"),
+      configuration = vim.fs.joinpath(
+        vim.fn.stdpath("config"),
+        "utils",
+        "ruff.toml"
+      ),
       organizeImports = true,
       showSyntaxErrors = true,
       lint = { enable = true },
