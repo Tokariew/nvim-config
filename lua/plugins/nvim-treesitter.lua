@@ -46,9 +46,10 @@ local parsers = {
   "markdown_inline",
   "mermaid",
   "muttrc",
-  "ninja",
   "nginx",
+  "ninja",
   "nix",
+  "norg",
   "pem",
   "php",
   "printf",
@@ -57,12 +58,15 @@ local parsers = {
   "regex",
   "rst",
   "ruby",
+  "scss",
+  "svelte",
   "toml",
   "tsx",
   "typescript",
   "typst",
   "vim",
   "vimdoc",
+  "vue",
   "xml",
   "xresources",
   "yaml",
@@ -116,7 +120,7 @@ local function setup_treesitter()
       end
 
       local ok = pcall(vim.treesitter.start, args.buf, lang)
-      if ok then
+      if ok and vim.treesitter.query.get(lang, "indents") then
         vim.bo[args.buf].indentexpr =
           "v:lua.require'nvim-treesitter'.indentexpr()"
       end
