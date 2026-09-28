@@ -13,6 +13,7 @@ return {
       latexindent = {
         ["local"] = vim.fn.expand("~/.config/latexindent.yaml"),
         modifyLineBreaks = true,
+        replacement = "-rv",
       },
       forwardSearch = {
         executable = "zathura",
