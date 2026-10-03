@@ -57,7 +57,7 @@ vim.diagnostic.config({
 
 vim.o.autoindent = true
 vim.o.expandtab = true
-vim.o.formatoptions = "rqnl1j"
+vim.o.formatoptions = "rqnt1j"
 vim.o.ignorecase = true
 vim.o.incsearch = true
 vim.o.infercase = true

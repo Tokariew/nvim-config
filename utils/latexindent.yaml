@@ -66,7 +66,7 @@ replacements:
   -
     when: after
     substitution: |-
-        s/^ {4}(?= *\\(?:subfile|label)\b)//mg
+        s/^ {4}(?= *\\(?:subfile|label|input)\b)//mg
   -
     when: after
     substitution: |-
