@@ -1,0 +1,59 @@
+{
+  "Add Caddy and AutoKuma labels": {
+    "body": [
+      "NetworkAlias=${1:my-app}",
+      "Label=\"caddy=${1}.lab.tokariew.xyz\"",
+      "Label=\"caddy.import=cloudflare\"",
+      "Label=\"caddy.reverse_proxy=${1}:${3:8080}\"",
+      "Label=\"kuma.${1}.http.name=${1}.lab.tokariew.xyz\"",
+      "Label=\"kuma.${1}.http.url=https://${1}.lab.tokariew.xyz\"",
+      "Label=\"kuma.${1}.http.max_retries=${7:3}\"",
+      "$0"
+    ],
+    "description": "Add Caddy Docker Proxy and AutoKuma labels to a Podman Quadlet",
+    "prefix": "quadlet-caddy-kuma"
+  },
+  "Add flame labels": {
+    "body": [
+      "Label=\"flame.name=${1:app}\"",
+      "Label=\"flame.url=https://${1}.lab.tokariew.xyz\"",
+      "Label=\"flame.type=app\"",
+      "$0"
+    ],
+    "description": "Add flame labels to a podman quadlet",
+    "prefix": "quadlet-flame"
+  },
+  "Podman Quadlet container": {
+    "body": [
+      "[Unit]",
+      "Description=${1:${TM_FILENAME_BASE}} container",
+      "",
+      "[Container]",
+      "AutoUpdate=registry",
+      "ContainerName=${TM_FILENAME_BASE}",
+      "Image=${2:docker.io/library/alpine:latest}",
+      "Network=lab.network",
+      "NetworkAlias=${TM_FILENAME_BASE}",
+      "",
+      "# EnvironmentFile=%E/containers/systemd/${TM_FILENAME_BASE}.env",
+      "# Environment=${3:TZ=Europe/Warsaw}",
+      "",
+      "# Volume=%h/containers/data/${TM_FILENAME_BASE}:/data:Z",
+      "# PublishPort=${4:8080}:${5:8080}",
+      "# Network=${6:services.network}",
+      "",
+      "# Exec=${7:command --argument}",
+      "",
+      "[Service]",
+      "Restart=on-failure",
+      "TimeoutStartSec=300",
+      "",
+      "[Install]",
+      "WantedBy=default.target",
+      "",
+      "$0"
+    ],
+    "description": "Create a rootless Podman Quadlet container",
+    "prefix": "quadlet-container"
+  }
+}

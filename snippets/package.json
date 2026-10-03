@@ -1,8 +1,4 @@
 {
-  "name": "mine-snipetto",
-  "engines": {
-    "vscode": "^1.11.0"
-  },
   "contributes": {
     "snippets": [
       {
@@ -19,7 +15,15 @@
       {
         "language": "tex",
         "path": "./tex.json"
+      },
+      {
+        "language": "systemd",
+        "path": "./systemd.json"
       }
     ]
-  }
+  },
+  "engines": {
+    "vscode": "^1.11.0"
+  },
+  "name": "mine-snipetto"
 }

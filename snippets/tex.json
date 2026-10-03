@@ -1,38 +1,54 @@
 {
+  "Wynik cząstkowy procedury": {
+    "body": [
+      "\\textbf{Wynik cząstkowy:} "
+    ],
+    "description": "Wynik cząstkowy procedury",
+    "prefix": "wynik"
+  },
   "annotacja": {
-    "prefix": "anot",
     "body": [
       "\\anot{@${1:user} / $CURRENT_DATE.$CURRENT_MONTH.$CURRENT_YEAR}",
       "{${2:ocena}}{}",
       "{${3:do kogo}}",
       "{}"
     ],
-    "description": "annotacja"
+    "description": "annotacja",
+    "prefix": "anot"
   },
   "dktodo": {
-    "prefix": "dktodo",
-    "body": "\\tododk{todo}\n{${1:treść}}\n{}\n{${2:kto}}"
+    "body": "\\tododk{todo}\n{${1:treść}}\n{}\n{${2:kto}}",
+    "prefix": "dktodo"
   },
   "ifthenelse": {
-    "prefix": "ifthen",
     "body": [
       "\\ifthenelse{\\equal{${1:pierwsza wartosc}{${2:druga wartosc}}}}",
       "{${2:gdy prawda}}",
       "{${3:gdy fałsz}}"
     ],
-    "description": "ifthenelse"
+    "description": "ifthenelse",
+    "prefix": "ifthen"
   },
   "rcs": {
-    "prefix": "rcs",
     "body": [
       "\\RCS$Change: 1 $",
       "\\UpdateChangeNumber",
       ""
     ],
-    "description": "rcs"
+    "description": "rcs",
+    "prefix": "rcs"
+  },
+  "user todo": {
+    "body": [
+      "\\todo${1:user}{todo}",
+      "{${2:treść}}",
+      "{} %uwagi",
+      "{${3:do kogo}}"
+    ],
+    "description": "user todo",
+    "prefix": "todo"
   },
   "uwaga minipage": {
-    "prefix": "uwaga",
     "body": [
       "\\begin{minipage}{\\linewidth}",
       "    \\begin{minipage}[left]{.2\\linewidth}",
@@ -47,40 +63,24 @@
       "\\end{minipage}",
       ""
     ],
-    "description": "uwaga minipage"
+    "description": "uwaga minipage",
+    "prefix": "uwaga"
   },
   "uwaga todo": {
-    "prefix": "uwaga_todo",
     "body": [
       "\\textbf{${1:kto} $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE:} "
     ],
-    "description": "uwaga todo"
-  },
-  "user todo": {
-    "prefix": "todo",
-    "body": [
-      "\\todo${1:user}{todo}",
-      "{${2:treść}}",
-      "{} %uwagi",
-      "{${3:do kogo}}"
-    ],
-    "description": "user todo"
+    "description": "uwaga todo",
+    "prefix": "uwaga_todo"
   },
   "uwagatodo": {
-    "prefix": "uwagatodo",
     "body": "\\textbf{DK ${CURRENT_YEAR}-${CURRENT_MONTH}-${CURRENT_DATE}:} ",
-    "description": "Uwaga w todo"
+    "description": "Uwaga w todo",
+    "prefix": "uwagatodo"
   },
   "wynik": {
-    "prefix": "wynik",
     "body": "\\textbf{Wynik cząstkowy:} ",
-    "description": "Procedury -- wyniki"
-  },
-  "Wynik cząstkowy procedury": {
-    "prefix": "wynik",
-    "body": [
-      "\\textbf{Wynik cząstkowy:} "
-    ],
-    "description": "Wynik cząstkowy procedury"
+    "description": "Procedury -- wyniki",
+    "prefix": "wynik"
   }
 }
