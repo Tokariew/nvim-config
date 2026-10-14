@@ -60,12 +60,3 @@ require("snacks").setup({
     enabled = true,
   },
 })
-
-vim.api.nvim_create_autocmd("LspProgress", {
-  callback = function()
-    vim.notify(vim.lsp.status(), "info", {
-      id = "lsp_progress",
-      title = "LSP Progress",
-    })
-  end,
-})
