@@ -65,7 +65,6 @@ vim.o.shiftwidth = 2
 vim.o.smartcase = true
 vim.o.smartindent = true
 vim.o.smarttab = true
-vim.o.spelloptions = "camel"
 vim.o.tabstop = 4
 vim.o.formatlistpat = [[^\s*[0-9\-\+\*]\+[\.\)]*\s\+]]
 vim.o.completetimeout = 100
