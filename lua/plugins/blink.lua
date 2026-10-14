@@ -3,20 +3,15 @@ vim.pack.add({
     src = "https://github.com/saghen/blink.cmp",
     version = vim.version.range("1.*"),
   },
-  "https://github.com/rafamadriz/friendly-snippets",
-  "https://github.com/folke/lazydev.nvim",
 })
 
-require("lazydev").setup({
-  library = {
-    { path = "${3rd}/luv/library", words = { "vim%.uv" } },
-  },
-})
+require("plugins.luasnip")
+require("plugins.lazydev")
 
 require("blink.cmp").setup({
   fuzzy = { implementation = "prefer_rust" },
   snippets = {
-    preset = "default",
+    preset = "luasnip",
   },
   sources = {
     default = { "lazydev", "lsp", "path", "snippets", "buffer" },
