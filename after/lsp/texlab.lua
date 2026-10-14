@@ -4,6 +4,9 @@ local latex_engine = (user == "tokariew") and "-lualatex" or "-pdf"
 return {
   settings = {
     texlab = {
+      diagnostics = {
+        ignoredPatterns = { "Unused" },
+      },
       build = {
         executable = "latexmk",
         args = { latex_engine, "-interaction=nonstopmode", "-synctex=1", "%f" },
