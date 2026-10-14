@@ -4,6 +4,7 @@ require("mason").setup({})
 
 local tools = {
   "bash-language-server",
+  "clangd",
   "debugpy",
   "fish-lsp",
   "jq",
